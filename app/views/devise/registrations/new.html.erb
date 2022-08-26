@@ -42,6 +42,17 @@
          <div class="field">
          <%#= f.label :"Tu es dans quelle ville?", class:"text-white font-bold" %> <br>
          <%#= f.text_field :city_name, class:"", placeholder:"Nom de la ville ..." %>
+
+          <label class="block">
+            <span class="text-gray-700">Ville De Fréquentation</span>
+              <%#= f.select :city_name,  %>
+                <select class="block w-full mt-1">
+                  <option>Corporate event</option>
+                  <option>Wedding</option>
+                  <option>Birthday</option>
+                  <option>Other</option>
+                </select>
+              </label>
          </div>
         
           <div class="">

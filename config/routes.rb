@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  resources :user_roles
-  resources :schools
-  resources :citytowns
-  resources :materials
-  resources :levels
+  
 
    #Home && Feed
   get "feed", to:'home#index'
+
+  #Courses
+  get "courses-show", to:"courses#show"
+  get "course-list", to:"courses#index"
+  get "lesson", to:"courses#new"
   
   #Dashboard
   get "dashboard", to:'dashboard#index'
@@ -20,6 +21,15 @@ Rails.application.routes.draw do
     get 'sign_in', to: 'devise/sessions#new'
     get 'student_sign_up', to: 'devise/registrations#new'
   end
+
+  resources :courses
+  resources :user_roles
+  resources :schools
+  resources :citytowns
+  resources :materials
+  resources :levels
+
+  
   devise_for :users
   root to:'homepage#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

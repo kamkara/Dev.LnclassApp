@@ -2,7 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,:trackable, authentication_keys: [:logged]
+        :recoverable, :rememberable, :validatable,
+        :trackable, authentication_keys: [:logged]
 
 has_many :levels, class_name: "Level", foreign_key: "user_id"
 has_many :materials, class_name: "Material", foreign_key: "user_id"

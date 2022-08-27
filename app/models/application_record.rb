@@ -5,6 +5,6 @@ class ApplicationRecord < ActiveRecord::Base
   self.implicit_order_column = "created_at"
   
   
-  scope :all_desc, -> { all.order('created_at desc')}
+  scope :all_ordered, -> { all.order('created_at desc')}
   scope :feed, -> {where("status= ?", "Lune")}
 end

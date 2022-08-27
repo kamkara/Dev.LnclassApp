@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  resources :flash_cards
   
-
+  #Course items
+  resources :courses do
+    resources :flash_cards, except:[:index, :show] do
+      # resources :line_items, except: [:index, :show]
+    end
+  end
+  
    #Home && Feed
   get "feed", to:'home#index'
 

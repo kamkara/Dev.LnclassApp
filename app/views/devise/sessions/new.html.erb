@@ -7,6 +7,9 @@
   <h2 class="mt-20">Se Connecter</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+     <!-- Error-->
+ <%#= form_error_notification(resource: resource) %>
+
     <div class="field">
       <%= f.label :matricule , class:"text-white font-bold"%><br />
       <%= f.text_field :logged, autofocus: true, autocomplete: "matricule", placeholder:"N° Matricule" %>

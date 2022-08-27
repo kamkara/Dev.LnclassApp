@@ -10,6 +10,8 @@ class CoursesController < ApplicationController
 
   # GET /courses/1 or /courses/1.json
   def show
+    #@line_item_dates = @quote.line_item_dates.includes(:line_items).ordered
+    @flash_cards = @course.flash_cards.all_ordered
   end
 
   # GET /courses/new
@@ -27,7 +29,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to dashboard_path, notice: "Course was successfully created." }
+        format.html { redirect_to course_path(@course), notice: "Course was successfully created." }
         format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new, status: :unprocessable_entity }

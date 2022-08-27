@@ -9,6 +9,11 @@
   .ln-sidebar-link {
     @apply px-3 py-2 mt-2 text-lg font-medium rounded-sm;
   }
+  .flash-card {
+    @apply my-20;
+  }
+  
+  
 }
 
 @import 'actiontext.css';

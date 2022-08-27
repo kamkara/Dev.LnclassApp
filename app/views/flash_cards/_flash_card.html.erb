@@ -1,0 +1,38 @@
+<!-- This is an example component -->
+<div id="<%= dom_id flash_card %>" class='flex  justify-center min-h-screen'>
+	<div className=" rounded-3xl md:p-1 text-center flex flex-row md:flex-col ">
+	
+    <div class="flex justify-between">
+
+    <!-- Add Flash Title -->
+		<h2 class="flex inline-flex "> <%= flash_card.title %> </h2> 
+    <!-- Add Flash Delete-->
+      <%= button_to "Delete",
+                    [course, flash_card],
+                    method: :delete,
+                    form: { data: { turbo_confirm: "Are you sure?" } },
+                    class: "flex inline-flex p-2 text-white font-bold bg-light-500" %>
+    <!-- Add Flash Edit-->
+      <%= link_to "Edit",
+                  [:edit, course, flash_card],
+                  class: "flex inline-flex ml-2 rounded-lg py-3 px-5 inline-block font-medium" %> 
+
+    <!-- Add Flash Items-->
+   
+    
+    <!-- Add Flash Items:New Item-->
+  <div class="flex flex-row ">
+    <div class="flex justify-between items-center">
+      <div class="card px-10 py-5 border">
+        <%= link_to "Add Flash Item", root_path,
+                    #[:new, quote, flash_card, :line_item],
+                      #data: { turbo_frame: nested_dom_id(flash_card, LineItem.new) },
+                      class: "p-2 bg-blue-600 text-white" %>
+      </div>
+    </div>
+  </div>
+    
+		
+	</div>
+</div>
+

@@ -5,9 +5,9 @@ class DashboardController < ApplicationController
   end
 
   def home
-    @LevelList = Level.all_desc
-    @CityList = Citytown.all_desc
-    @MaterialList = Material.all_desc
-    @SchoolList = School.all_desc
+    @LevelList = Level.all_ordered
+    @CityList = Citytown.all_ordered
+    @MaterialList = Material.all_ordered
+    @SchoolList = School.all_ordered
   end
 end

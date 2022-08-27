@@ -1,15 +1,6 @@
 <%= form_with(model: school, class: "contents") do |form| %>
-  <% if school.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(school.errors.count, "error") %> prohibited this school from being saved:</h2>
-
-      <ul>
-        <% school.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+   <!-- Error-->
+ <%= form_error_notification(school) %>
 
   <div class="my-5">
     <%= form.label :title %>

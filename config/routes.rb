@@ -24,19 +24,21 @@ Rails.application.routes.draw do
   get "new-city", to:"citytowns#new"
   get "new-school", to:"schools#new"
 
-  devise_scope :user do
-    get 'sign_in', to: 'devise/sessions#new'
-    get 'student_sign_up', to: 'devise/registrations#new'
-  end
-
+  
   resources :courses
   resources :user_roles
   resources :schools
   resources :citytowns
   resources :materials
   resources :levels
-
   
+  #Membership 
+  devise_scope :user do
+    get '/student-sign-in', to: 'devise/sessions#new'
+    get '/student-sign-up', to: 'devise/registrations#new', as: "new_user_registration"
+    delete '/sign-out', to: 'devise/sessions#destroy'
+  end
+
   devise_for :users
   root to:'homepage#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

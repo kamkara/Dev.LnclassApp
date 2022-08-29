@@ -1,0 +1,156 @@
+<div id="hero" class="section section--hero section--noPadding section--left section--udvmxtd9ux4yeraw" style="background-color:rgba(0, 0, 0, 0.94);--pdx-min-height:0px;--wr-max:1030px">
+			<div id="headerSpacer" style="height:50px"></div>
+			<script>
+				!function(){
+					var e,t=document.getElementById("header"),n=document.getElementById("headerSpacer");
+					t&&n&&(e=t.getBoundingClientRect().height,n.setAttribute("style","height:"+e+"px"))
+				}
+			</script>
+			<div class="ft ft--left" style="--pdx-pt:0;--pdx-pb:0">
+				<div class="ft__half">
+					<div class="ft__wrapper" style="max-width:485px">
+						<div class="ft__content">
+							<h1 class="hero__title color-1 weight-title-h font-title">Plus jamais tu ne sera bloqué dans une matiere</h1>
+							<p class="hero__subtitle weight-text">
+								Use this section to point out how your product works and why it is different
+							</p>
+							<div class="ctas">
+								<div class="inlineFormWrapper left">
+									<form id="if_5fj395664zn" class="inlineForm inlineForm--undefined">
+										<div class="inlineFormContent">
+											<input type="hidden" id="if_siteid_5fj395664zn" value="zxf9wl5fgmhz">
+											<input type="hidden" id="if_listid_5fj395664zn">
+											<input type="hidden" id="if_action_5fj395664zn" value="forward">
+											<input type="hidden" id="if_optin_5fj395664zn">
+											<input type="hidden" id="if_tags_5fj395664zn" value="">
+											<input type="hidden" id="if_url_5fj395664zn">
+											<input type="hidden" id="if_legal_5fj395664zn" value="">
+											<input type="hidden" id="if_reqaccept_5fj395664zn" value="false">
+											<input type="text" id="if_name_5fj395664zn" class="inlineForm__input name" placeholder="Nom &amp; prénom">
+											<input type="email" id="if_email_5fj395664zn" autocomplete="email" class="inlineForm__input" placeholder="email">
+											<button id="if_submit_5fj395664zn" class="btn primary btn--large">S&#x27;inscrire d&#x27;abord</button>
+										</div>
+									</form>
+								</div>
+								<script>
+									!function(){
+										var e=document.getElementById("if_5fj395664zn"),c=document.getElementById("if_submit_5fj395664zn"),d=document.getElementById("if_siteid_5fj395664zn"),r=document.getElementById("if_listid_5fj395664zn"),u=document.getElementById("if_email_5fj395664zn"),m=document.getElementById("if_action_5fj395664zn"),f=document.getElementById("if_url_5fj395664zn"),v=document.getElementById("if_name_5fj395664zn"),g=document.getElementById("if_reqaccept_5fj395664zn"),_=document.getElementById("if_accept_5fj395664zn"),I=document.getElementById("if_acceptlbl_5fj395664zn"),E=document.getElementById("if_legal_5fj395664zn"),t=document.getElementById("if_legalui_5fj395664zn"),L=document.getElementById("if_optin_5fj395664zn"),p=document.getElementById("if_tags_5fj395664zn"),y=null;
+										function n(e){
+											e.preventDefault();
+											var t,n,i,a,l,s,o={
+												siteId:d.value,listId:r.value,email:u.value,action:m.value,name:v?v.value:null,didAccept:_?_.checked:null,legal:E?E.value:null,doubleOptIn:"true"===L.value,tags:p.value?p.value.split(","):[]
+											};
+											s=!1,(l=o).email.length<6||-1===l.email.indexOf("@")||-1===l.email.indexOf(".")?(s=!0,u.classList.add("error")):u.classList.remove("error"),v&&""===v.value?(s=!0,v.classList.add("error")):v&&v.classList.remove("error"),I&&("true"!==g.value||_.checked?I.classList.remove("error"):(s=!0,I.classList.add("error"))),!1===s&&(c.classList.remove("btn--error"),c.classList.remove("btn--success"),c.classList.add("btn--loading"),"forward"===o.action?(i=o,a=(a=(a=f.value).replace("[EMAIL]",i.email)).replace("[NAME]",i.name),b(i.siteId,i.action,i.listId,!0),window.location.href=a):(t=o,(n=new XMLHttpRequest).open("POST",window.location.origin+"/api/subscribe",!0),n.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8"),n.send(JSON.stringify(t)),n.onload=function(){
+												c.classList.remove("btn--loading"),200<=this.status&&this.status<400?(u.value="",v&&(v.value=""),j(!1),w(),c.classList.add("btn--success"),y=setTimeout(function(){
+													c.classList.remove("btn--success")
+												}
+												,5e3),b(t.siteId,t.action,t.listId,!1)):B()
+											}
+											,n.onerror=function(){
+												c.classList.remove("btn--loading"),alert("A network error occured. Please make sure you are connected to the internet."),B()
+											}
+											))
+										}
+										function w(){
+											y&&clearTimeout(y)
+										}
+										function B(){
+											w(),c.classList.add("btn--error"),y=setTimeout(function(){
+												c.classList.remove("btn--error")
+											}
+											,5e3)
+										}
+										function b(e,t,n,i){
+											window.SendEvent({
+												siteId:e,category:"emailForm",name:"Email Form",data:{
+													action:t,listId:n,page:window.location.pathname
+												}
+												,asBeacon:i
+											}
+											)
+										}
+										function j(e){
+											t&&(e?t.classList.add("show"):t.classList.remove("show"))
+										}
+										e.addEventListener("submit",n),c.addEventListener("click",n),u.oninput=function(e){
+											e.target.value&&6<e.target.value.length?j(!0):j(!1)
+										}
+									}
+								</script>
+							</div>
+							<div class="hero__ctaInfo"></div>
+						</div>
+					</div>
+				</div>
+				<div class="ft__half pdx pdxParent--laptop-smartphone" style="--pdx-maxheight:1">
+					<div class="pdxItem pdxItem--laptop-smartphone">
+						<svg viewBox="0 0 1391 762" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<defs>
+								<linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="frameLaptopThin-a">
+									<stop stop-color="#FFF" offset="0%"></stop>
+									<stop stop-color="#F1F2F4" offset="100%"></stop>
+								</linearGradient>
+								<path d="M166 0h1057c18.225 0 33 14.775 33 33v679c0 12.15-9.85 22-22 22H155c-12.15 0-22-9.85-22-22V33c0-18.225 14.775-33 33-33z" id="frameLaptopThin-b"></path>
+								<filter x="-.8%" y="-1.2%" width="101.5%" height="102.3%" filterUnits="objectBoundingBox" id="frameLaptopThin-c">
+									<feGaussianBlur stdDeviation="4" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+									<feOffset dy="-9" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+									<feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+									<feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0248033217 0" in="shadowInnerInner1" result="shadowMatrixInner1"></feColorMatrix>
+									<feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner2"></feGaussianBlur>
+									<feOffset in="shadowBlurInner2" result="shadowOffsetInner2"></feOffset>
+									<feComposite in="shadowOffsetInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
+									<feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.136636801 0" in="shadowInnerInner2" result="shadowMatrixInner2"></feColorMatrix>
+									<feMerge>
+										<feMergeNode in="shadowMatrixInner1"></feMergeNode>
+										<feMergeNode in="shadowMatrixInner2"></feMergeNode>
+									</feMerge>
+								</filter>
+								<path d="M303.477 740.075h776.702c195.565 0 299.171 7.333 310.821 22V763H0v-.925c31.315-14.667 132.474-22 303.477-22z" id="frameLaptopThin-d"></path>
+								<filter x="-1.1%" y="-68.2%" width="102.2%" height="236.4%" filterUnits="objectBoundingBox" id="frameLaptopThin-e">
+									<feGaussianBlur stdDeviation="9" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+									<feOffset dy="12" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+									<feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+									<feColorMatrix values="0 0 0 0 0.88627451 0 0 0 0 0.888083393 0 0 0 0 0.890196078 0 0 0 1 0" in="shadowInnerInner1"></feColorMatrix>
+								</filter>
+							</defs>
+							<g fill="none" fill-rule="evenodd">
+								<g>
+									<use fill="url(#frameLaptopThin-a)" xlink:href="#frameLaptopThin-b"></use>
+									<use fill="#000" filter="url(#frameLaptopThin-c)" xlink:href="#frameLaptopThin-b"></use>
+								</g>
+								<path d="M182 33h1025c10.493 0 19 8.507 19 19v626c0 10.493-8.507 19-19 19H182c-10.493 0-19-8.507-19-19V52c0-10.493 8.507-19 19-19z" fill="transparent"></path>
+								<path d="M3 729h1385a3 3 0 0 1 3 3v9H0v-9a3 3 0 0 1 3-3z" fill="#FFF"></path>
+								<g transform="matrix(1 0 0 -1 0 1502)">
+									<use fill="#FFF" xlink:href="#frameLaptopThin-d"></use>
+									<use fill="#000" filter="url(#frameLaptopThin-e)" xlink:href="#frameLaptopThin-d"></use>
+								</g>
+							</g>
+						</svg>
+						<div class="pdxContent">
+							<img src="/lib_MXNWuvIodPXiwgVF/99ahey71u685kux9.png?w=642&amp;h=400&amp;fit=crop" srcset="/lib_MXNWuvIodPXiwgVF/99ahey71u685kux9.png?w=642&amp;h=400&amp;fit=crop, /lib_MXNWuvIodPXiwgVF/99ahey71u685kux9.png?w=642&amp;h=400&amp;fit=crop&amp;dpr=2 2x">
+						</div>
+						<div class="pdxItem pdxItem--laptop-smartphone-phone">
+							<svg viewBox="0 0 328 655" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="pdxPhone">
+								<defs>
+									<path d="M0 45.86C0 20.532 20.532 0 45.86 0h236.28C307.468 0 328 20.532 328 45.86v562.286c0 25.328-20.532 45.86-45.86 45.86H45.86c-25.328 0-45.86-20.532-45.86-45.86V45.86z" id="framePhoneThin-a"></path>
+									<filter x="-.8%" y="-.4%" width="101.5%" height="100.8%" filterUnits="objectBoundingBox" id="framePhoneThin-b">
+										<feGaussianBlur stdDeviation="2.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+										<feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+										<feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+										<feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.192881337 0" in="shadowInnerInner1"></feColorMatrix>
+									</filter>
+								</defs>
+								<g fill="none" fill-rule="evenodd">
+									<g>
+										<use fill="#FFF" xlink:href="#framePhoneThin-a"></use>
+										<use fill="#000" filter="url(#framePhoneThin-b)" xlink:href="#framePhoneThin-a"></use>
+									</g>
+									<path d="M14 47c0-18.778 15.222-34 34-34h232c18.778 0 34 15.222 34 34v560c0 18.778-15.222 34-34 34H48c-18.778 0-34-15.222-34-34V47z" fill="transparent" fill-rule="nonzero"></path>
+								</g>
+							</svg>
+							<div class="pdxContent"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>

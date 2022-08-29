@@ -22,6 +22,14 @@
     <%= favicon_link_tag asset_path('favicons/favicon-16x16.png', rel:"icon", type:"image/png", sizes:"32x32") %>
     <%= favicon_link_tag asset_path('favicons/favicon-32x32.png', rel:"icon", type:"image/png", sizes:"32x32") %>
     
+    
+    <!-- Home page assets-->
+    <style type="text/css">
+    <%= render "layouts/HomePageStyles/normalize" %>
+    <%= render "layouts/HomePageStyles/style" %>
+		</style>
+		<link href="https://fonts.googleapis.com/css?family=Source+Serif Pro:700|Raleway:600,400,500|Abril+Fatface:400&amp;display=fallback" rel="stylesheet">
+    
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -29,11 +37,12 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
   </head>
 
-  <body>
-    <main class="bg-black">
+  <body class="bg-black">
       <%= yield %>
-    </main>
+    <!-- Scripts Js-->
+    <%= render "layouts/HomePageJs/javascripts" %>
   </body>
 </html>

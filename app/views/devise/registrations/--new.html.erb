@@ -1,0 +1,72 @@
+<div class="container-fluid ">
+  <div class="flex flex-wrap ">
+    <div class="m-auto card border px-24 rounded-md">
+    <div class="card flex text-white font-bold">
+      <span class="">Student</span>
+      <span class="">Teacher</span>
+    </div>
+      <h2 class="mt-20 text-white font-bold">Créer Son Sompte</h2>
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+           <!-- Error-->
+              <%#= form_error_notification(resource: resource) %>
+
+          <br />
+          <div class="field ">
+            <%= f.label :Nom, class:"text-white font-bold" %><br />
+            <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder:"Prénom ..." %>
+          </div>
+          <div class="field my-4">
+            <%= f.label :Prénom, class:"text-white font-bold" %><br />
+            <%= f.text_field :last_name, placeholder:"Prénom ..." %>
+          </div>
+          <div class="field">
+            <%= f.label :"N° Matricule", class:"text-white font-bold" %><br />
+            <%= f.text_field :matricule, placeholder:"N° Matricule ..." %>
+          </div>
+          <div class="field my-4 ">
+            <%= f.label :"N° WhatsApp", class:"text-white font-bold" %><br />
+            <%= f.phone_field :contact, placeholder:"N° WhatsApp ..." %>
+          </div>
+          <div class="">
+            <%= f.label :"Je suis en :" , class:"text-white" %> <br>
+            <%= f.radio_button :level_name, "Tle A1", class:"bg-white font-bold" %> <span class="text-bold text-white">Tle A1</span>
+            <%= f.radio_button :level_name, "Tle A2", class:"bg-white font-bold pl-4" %> <span class="text-bold text-white">Tle A2</span>
+            <%= f.radio_button :level_name, "Tle D", class:"bg-white font-bold pl-4" %> <span class="text-bold text-white">Tle D</span>
+            <%= f.radio_button :level_name, "Tle C", class:"bg-white font-bold pl-4" %> <span class="text-bold text-white">Tle C</span>
+          </div>
+          <div class="field my-4 ">
+            <%= f.label :"Ville", class:"text-white font-bold" %><br />
+            <%= f.text_field :city_name, placeholder:"ville ..." %>
+          </div>
+        <%= f.hidden_field :user_role, value:"Student" %>
+         <div class="field">
+         <%#= f.label :"Tu es dans quelle ville?", class:"text-white font-bold" %> <br>
+         <%#= f.text_field :city_name, class:"", placeholder:"Nom de la ville ..." %>
+
+          <label class="block">
+            <span class="text-gray-700">Ville De Fréquentation</span>
+              <%#= f.select :city_name,  %>
+                <select class="block w-full mt-1">
+                  <option>Corporate event</option>
+                  <option>Wedding</option>
+                  <option>Birthday</option>
+                  <option>Other</option>
+                </select>
+              </label>
+         </div>
+        
+          <div class="">
+            <%= f.radio_button :gender, "Homme", class:"bg-white font-bold", id:"homme" %> <span for="homme" class="text-bold text-white">Homme</span>
+            <%= f.radio_button :gender, "Femme", class:"bg-white font-bold pl-4" %> <span class="text-bold text-white">Fomme</span>
+          </div>
+          <div class="actions my-2">
+            <%= f.submit "VALIDER L'INSCRIPTION", class:"bg-blue-500 text-white font-bold p-2  rounded-md mt-2" %>
+          </div>
+        <% end %>
+<%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+

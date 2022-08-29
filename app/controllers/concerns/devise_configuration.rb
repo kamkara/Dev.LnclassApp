@@ -11,10 +11,10 @@ module DeviseConfiguration
     def configure_permitted_parameters
         #Sign Up account params
         sign_up_params = [:first_name, :last_name, :full_name, :contact, :matricule,
-            :user_role, :gender, :city_name, :level_name, :material_name, :slug]
+            :user_role, :gender, :city_name, :level_name, :material_name, :doublant, :slug]
         #Update account params
-        update_params = [:first_name, :last_name, :full_name, :contact,
-            :role, :gender, :city_name, :level_name, :material_name, :matricule,
+        update_params = [:first_name, :last_name, :full_name, :contact, :matricule,
+            :role, :gender, :city_name, :level_name, :material_name, :doublant, 
             :password, :password_confirmation, :current_password]
 
         devise_parameter_sanitizer.permit(:sign_in, keys: [:logged, :password])

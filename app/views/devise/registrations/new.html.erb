@@ -35,22 +35,14 @@
 					<div class="mt-8 max-w-md">
 						<div class="grid grid-cols-1 gap-6 pt-2">
 							<label class="block">
-								<span class="text-white">Ville de fréquentation</span>
-								<%#= f.select :city_name,  %>
-								<select class="block w-full mt-1">
-									<option>Corporate event</option>
-									<option>Wedding</option>
-									<option>Birthday</option>
-									<option>Other</option>
-								</select>
+								<span class="text-white">Ville de fréquentation</span><br>
+								<%= f.select :city_name, @citytowns.map{|citytown| [citytown.title]}, class:"block w-full mt-2" %>
 							</label>
 						</div>
 					</div>
-          <br>
 					<div class="pt-8 max-w-md">
 						<div class="grid grid-cols-1 gap-6 py-4">
 							<label class="block">
-								
 								<%= f.label :"Je suis en :" , class:"text-white" %>
 								<br>
 								<%= f.radio_button :level_name, "Tle A1", class:"bg-white font-bold" %>
@@ -100,9 +92,9 @@
 							<label class="block">
 								<%= f.label :"Important: Reprends-tu la Tle?" , class:"text-white" %>
 								<br>
-								<%= f.radio_button :gender, "Femme", id:"oui", class:"bg-white font-bold"  %>
+								<%= f.radio_button :doublant, "Oui", id:"oui", class:"bg-white font-bold"  %>
 								<label for="fenale" class="text-bold text-white">Oui</label>
-								<%= f.radio_button :gender, "Homme",id:"non", class:"bg-white font-bold pl-4" %>
+								<%= f.radio_button :doublant, "Non",id:"non", class:"bg-white font-bold pl-4" %>
 								<label for="male" class="text-bold text-white">Non</span>
 								
 							</label>
@@ -116,6 +108,7 @@
            				</div>
 					</div>
 				</div>
+				 <%= f.hidden_field :user_role, value:"Student" %>
 				<div class="pt-4 my-6">
 					<%= f.submit "Inscription", class:"bg-blue-500 text-white font-bold p-3 px-6 rounded-full mt-2" %>
 				</div>

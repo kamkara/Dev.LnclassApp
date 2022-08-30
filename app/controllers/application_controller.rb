@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
      #before_action :authenticate_user!
     protect_from_forgery with: :exception
-    
+    before_action :find_citytown
 
     #Keep clean Application conroller, moved on noncern
     include DeviseConfiguration
@@ -38,5 +38,9 @@ class ApplicationController < ActionController::Base
 
     # Overwriting the sign_out redirect path method
   
+private
 
+    def find_citytown
+        @citytowns = Citytown.all
+    end
 end

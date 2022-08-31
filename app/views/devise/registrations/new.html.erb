@@ -24,26 +24,26 @@
 				<div class="py-8 pb-2">
 					<div class="py-8 max-w-md">
 						<div class="grid grid-cols-1 gap-6">
-							<label class="block"><span class="text-white">Nom </span><%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder:"Konan ...",class:"mt-1 block w-full" %></label>
+							<label class="block"><span class="text-white">Nom: </span><%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder:"Konan ...",class:"mt-1 block w-full" %></label>
 						</div>
 					</div>
 					<div class="py-8 max-w-md">
 						<div class="grid grid-cols-1 gap-6">
-							<label class="block"><span class="text-white">Prénom </span><%= f.text_field :last_name,  placeholder:"Ex: Angela ...", class:"mt-1 block w-full" %></label>
+							<label class="block"><span class="text-white">Prénom: </span><%= f.text_field :last_name,  placeholder:"Ex: Angela ...", class:"mt-1 block w-full" %></label>
 						</div>
 					</div>
 					<div class="mt-8 max-w-md">
 						<div class="grid grid-cols-1 gap-6 pt-2">
-							<label class="block">
-								<span class="text-white">Ville de fréquentation</span><br>
+							<div class=" select">
+								<span class="text-white">Ville:</span><br>
 								<%= f.select :city_name, @citytowns.map{|citytown| [citytown.title]}, class:"block w-full mt-2" %>
-							</label>
+							</div>
 						</div>
 					</div>
-					<div class="pt-8 max-w-md">
+					<div class="pt-12 max-w-md">
 						<div class="grid grid-cols-1 gap-6 py-4">
 							<label class="block">
-								<%= f.label :"Je suis en :" , class:"text-white" %>
+								<%= f.label :"La Série:" , class:"text-white" %>
 								<br>
 								<%= f.radio_button :level_name, "Tle A1", class:"bg-white font-bold" %>
 								<span class="text-bold text-white">Tle A1</span>
@@ -60,7 +60,7 @@
 					</div>
           <div class="py-12 max-w-md">
             <div class="grid grid-cols-1 gap-6">
-              <label class="block"><span class="text-white ">N° matricule </span>
+              <label class="block"><span class="text-white ">N° matricule: </span>
                 <%= f.text_field :matricule, placeholder:"Ex: 13235330y", class:"mt-1 block w-full" %>
               </label>
             </div>
@@ -104,7 +104,7 @@
 				<div class="py-8 max-w-md">
 					<div class="grid grid-cols-1 gap-6">
 						<div class="block my-4">
-              				<p class="text-white">Vérifiez que vous avez bien remplir les champs avec les bonnes informations. </p>
+              				<p class="text-white">Vérifiez que vous avez bien remplir les champs avec les bonnes informations avant de clicker sur Inscription. </p>
            				</div>
 					</div>
 				</div>

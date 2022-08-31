@@ -1,14 +1,26 @@
-<div class="bg-green-500 p-2 ">
-	<p class="my-2">
-		Work Outs that Will Make you Better at Sex - No one likes being the person who has to constantly stop to take a breather during sex. The internet is filled with work outs that will help your thrust, stability and flexibility. So work in some bridges and planks into your morning routine.Become Main Character in Other People’s Movies - I’ve had three friends in the last week tell me that they think that I am figment of their imagination. Their statements scared me at first, but then reminded me that we are all characters in other people’s movies. So do what you can to promote yourself from an extra to a supporting character. Whether that means talking about how Google is going to become God in an Uber Pool or going out of your way to help out a loose acquaintance. Do what you can
-	</p>
-	<p class="my-2">
-		Work Outs that Will Make you Better at Sex - No one likes being the person who has to constantly stop to take a breather during sex. The internet is filled with work outs that will help your thrust, stability and flexibility. So work in some bridges and planks into your morning routine.Become Main Character in Other People’s Movies - I’ve had three friends in the last week tell me that they think that I am figment of their imagination. Their statements scared me at first, but then reminded me that we are all characters in other people’s movies. So do what you can to promote yourself from an extra to a supporting character. Whether that means talking about how Google is going to become God in an Uber Pool or going out of your way to help out a loose acquaintance. Do what you can
-	</p>
-	<p class="my-2">
-		Work Outs that Will Make you Better at Sex - No one likes being the person who has to constantly stop to take a breather during sex. The internet is filled with work outs that will help your thrust, stability and flexibility. So work in some bridges and planks into your morning routine.Become Main Character in Other People’s Movies - I’ve had three friends in the last week tell me that they think that I am figment of their imagination. Their statements scared me at first, but then reminded me that we are all characters in other people’s movies. So do what you can to promote yourself from an extra to a supporting character. Whether that means talking about how Google is going to become God in an Uber Pool or going out of your way to help out a loose acquaintance. Do what you can
-	</p>
-	<p class="my-2">
-		Work Outs that Will Make you Better at Sex - No one likes being the person who has to constantly stop to take a breather during sex. The internet is filled with work outs that will help your thrust, stability and flexibility. So work in some bridges and planks into your morning routine.Become Main Character in Other People’s Movies - I’ve had three friends in the last week tell me that they think that I am figment of their imagination. Their statements scared me at first, but then reminded me that we are all characters in other people’s movies. So do what you can to promote yourself from an extra to a supporting character. Whether that means talking about how Google is going to become God in an Uber Pool or going out of your way to help out a loose acquaintance. Do what you can
-	</p>
-</div>
+<% @FeedCourses.each do |feed_course| %>
+	<div class="w-full flex border-b p-2 border-gray-300">
+        <div class="flex flex-col ">
+	        <div class="flex justify-center  ">
+				<p class="font-bold text-xl"><%= feed_course.material_name %></p> 
+			</div>
+			<div class="mt-4">
+				<span class="font-bold text-xl"><%= feed_course.title %></span>
+			</div>
+
+			<div class="mt-1 onclick="feeds_course">
+				<%= truncate(strip_tags(feed_course.content.to_s.html_safe), length: 400) %> 
+				<span class="ln-btn-color ln-btn-hover-color ">Voir plus</span>
+			</div>
+            
+            <!--  -->
+			<div class="border-t mt-2">
+				<div class="flex justify-between my-1">
+					<button class="ml-2 text-md font-semibold">Essentiels</button>
+					<button class="ml-2 text-sm font-semibold">Initiation</button>
+					<button class="ml-2 text-sm font-semibold">Exercices</button>
+				</div>
+			</div>
+		</div> 
+	</div>
+<% end %>

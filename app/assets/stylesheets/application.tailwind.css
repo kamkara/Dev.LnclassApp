@@ -8,6 +8,11 @@
     @apply bg-blue-600 py-1 px-2 rounded-full;
   }
   
+  /*Logo decor */
+  .ln-logo-decor {
+    @apply underline decoration-sky-500 decoration-dashed;
+  }
+  /* link hover color */
   .ln-btn-hover-color {
     @apply hover:bg-blue-300;
   }

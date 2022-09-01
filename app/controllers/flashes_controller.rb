@@ -1,6 +1,6 @@
 class FlashesController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_course, only: %i[new show]
+  before_action :set_course, only: %i[new show]
   before_action :set_flash, only: %i[ show edit update destroy ]
 
   # GET /flashes or /flashes.json
@@ -62,12 +62,12 @@ class FlashesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_flash
-      @flash = Flash.friendly.find(params[:id])
+      @flash = course.flashes.friendly.find(params[:id])
     end
 
     #Find course
-    def find_course
-      @course = Course.all
+    def set_course
+      @course = Course.friendly.find(params[:course_id])
     end
 
     # Only allow a list of trusted parameters through.

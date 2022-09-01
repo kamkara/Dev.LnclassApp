@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :flashes
   resources :flash_cards
-  
+  resources :flashes
   #Course items
   resources :courses do
+    resources :flashes, except: %i[:index, :show]
     resources :flash_cards, except:[:index, :show] do
       # resources :line_items, except: [:index, :show]
     end

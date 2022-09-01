@@ -1,6 +1,7 @@
 class Course < ApplicationRecord
   belongs_to :user
   has_rich_text :content
+  has_many :flashes, dependent: :destroy
   has_many :flash_cards, dependent: :destroy
 
   ################## FIX N+1  ###############

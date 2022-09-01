@@ -10,6 +10,7 @@ has_many :materials, class_name: "Material", foreign_key: "user_id"
 has_many :schools, class_name: "School", foreign_key: "user_id"
 has_many :citytowns, class_name: "Citytown", foreign_key: "user_id"
 has_many :courses, class_name: "Course", foreign_key: "user_id"
+has_many :flashes
 has_many :flash_cards
 
 

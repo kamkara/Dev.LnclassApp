@@ -15,7 +15,7 @@ module DeviseConfiguration
             :user_role, :gender, :city_name, :level_name, :material_name, :doublant, :slug]
         #Update account params
         update_params = [:first_name, :last_name, :full_name, :contact, :matricule,
-            :role, :gender, :city_name, :level_name, :material_name, :doublant, 
+            :user_role, :gender, :city_name, :level_name, :material_name, :doublant, 
             :password, :password_confirmation, :current_password]
 
         devise_parameter_sanitizer.permit(:sign_in, keys: [:logged, :password])

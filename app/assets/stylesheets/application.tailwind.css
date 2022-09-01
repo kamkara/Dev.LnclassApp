@@ -7,14 +7,14 @@
   .ln-btn-color {
     @apply bg-blue-600 py-1 px-2 rounded-full;
   }
+  /* link hover color */
+  .ln-btn-hover-color {
+    @apply hover:bg-blue-500;
+  }
   
   /*Logo decor */
   .ln-logo-decor {
     @apply underline decoration-sky-500 decoration-dashed;
-  }
-  /* link hover color */
-  .ln-btn-hover-color {
-    @apply hover:bg-blue-300;
   }
   /* Form sign in */
   .ln-signIn-form {

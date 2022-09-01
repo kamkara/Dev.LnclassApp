@@ -3,5 +3,8 @@ class HomeController < ApplicationController
   
   def index
     @FeedCourses = Course.feed.all_ordered
+    #Create Flash from Course show
+    #@flash = flash.include(@FeedCourses)
+    
   end
 end

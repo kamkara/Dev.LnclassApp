@@ -14,9 +14,9 @@
 						<span tabindex="0" class="mx-2">Créer</span>
 					</button>
 						<ul tabindex="0" class="dropdown-content menu text-black bg-gray-100 rounded-box">
-							<li><a>Essentiels</a></li>
-							<li><a>Initiation</a></li>
-							<li><a>Exercices</a></li>
+							<li><%= link_to 'Essentiels', new_feed_course_flashes_path(@flash) %></li>
+							<li><%= link_to 'Initiation', root_path %></li>
+							<li><%= link_to 'Exercices', root_path %></li>
 						</ul>						
 				</div>
 			</div>

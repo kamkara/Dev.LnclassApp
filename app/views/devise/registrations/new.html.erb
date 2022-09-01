@@ -33,11 +33,9 @@
 						</div>
 					</div>
 					<div class="mt-8 max-w-md">
-						<div class="grid grid-cols-1 gap-6 pt-2">
-							<div class=" select">
-								<span class="text-white">Ville:</span><br>
-								<%= f.select :city_name, @citytowns.map{|citytown| [citytown.title]}, class:"block w-full mt-2" %>
-							</div>
+						<div class="grid grid-cols-1 gap-2">
+							<span class="text-white">Ville:</span>
+							<%= f.select(:city_name, @citytowns.map{|citytown| [citytown.title]}, { prompt: "choisir" }, class:"block w-full select") %>
 						</div>
 					</div>
 					<div class="pt-12 max-w-md">

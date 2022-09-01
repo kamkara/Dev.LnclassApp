@@ -1,6 +1,6 @@
 class FlashesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_course, only: %i[new show]
+  before_action :set_course
   before_action :set_flash, only: %i[ show edit update destroy ]
 
   # GET /flashes or /flashes.json
@@ -14,7 +14,7 @@ class FlashesController < ApplicationController
 
   # GET /flashes/new
   def new
-    @flash = Flash.new
+    @flash = @course.flashes.build
   end
 
   # GET /flashes/1/edit
@@ -23,11 +23,11 @@ class FlashesController < ApplicationController
 
   # POST /flashes or /flashes.json
   def create
-    @flash = current_user.flashes.build(flash_params)
-
+    @flash = @course.flashes.build(flash_params)
+    @flash.user_id = current_user.id
     respond_to do |format|
       if @flash.save
-        format.html { redirect_to flash_url(@flash), notice: "Flash was successfully created." }
+        format.html { redirect_to feed_path, notice: "Flash was successfully created." }
         format.json { render :show, status: :created, location: @flash }
       else
         format.html { render :new, status: :unprocessable_entity }

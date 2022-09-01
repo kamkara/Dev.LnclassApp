@@ -1,20 +1,20 @@
 Rails.application.routes.draw do
   resources :flash_cards
-  resources :flashes
+  resources :flashes, except: [:create, :index, :new]
   #Course items
-  resources :courses do
-    resources :flashes, except: %i[:index, :show]
-    resources :flash_cards, except:[:index, :show] do
-      # resources :line_items, except: [:index, :show]
-    end
+  resources :courses, shallow: true do
+    resources :flashes, only: [:create, :index, :new]
   end
+  #resources :flash_cards, except:[:index, :show] do
+    # resources :line_items, except: [:index, :show]
+  #end
   
    #Home && Feed
-  get "feed", to:'home#index'
+  get "home", to:'home#index'
 
   #Courses
   get "courses-show", to:"courses#show"
-  get "course-list", to:"courses#index"
+  get "feed", to:"courses#index"
   get "lesson", to:"courses#new"
   
   #Dashboard

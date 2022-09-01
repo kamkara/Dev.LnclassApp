@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :flashes
   resources :flash_cards
   
   #Course items

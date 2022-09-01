@@ -1,9 +1,10 @@
 #Whitelist additional fields for devise User objects.
 module DeviseConfiguration
     extend ActiveSupport::Concern
-
-     #Required to accept fields created outside of devise for User
-     included do
+    
+    #Required to accept fields created outside of devise for User
+    included do
+        
         before_action :configure_permitted_parameters, if: :devise_controller?
      end
 

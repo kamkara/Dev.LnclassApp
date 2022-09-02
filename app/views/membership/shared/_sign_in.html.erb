@@ -13,7 +13,7 @@
 					</div>
 				</div>
 			</div>
-			<!-- N° Whatsapp -->
+			<!-- password-->
 			<div class='max-w-md mx-auto  space-y-6'>
 				<div  x-show="showen">
 					<div class="space-y-2 text-gray-700" x-data="{isshow:false}">
@@ -24,7 +24,7 @@
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
 								</svg>
 							</div>
-							<input placeholder="Ex: *******"class="pl-11 text-gray-800 pr-11 py-2 border-gray-600 rounded-md focus:border-gray-400focus:ringfocus:ring-gray-800 ring-gray-400 ring focus:ring-offset-2focus:ring-offset-white block w-full"id="password"autocomplete="new-password"type="password" name="user[password]"x-bind:type="isshow ? 'text' : 'password'" />
+							<input placeholder="Ex: *******" class="pl-11 text-gray-800 pr-11 py-2 border-gray-600 rounded-md focus:border-gray-400focus:ringfocus:ring-gray-800 ring-gray-400 ring focus:ring-offset-2focus:ring-offset-white block w-full"id="password"autocomplete="new-password"type="password" name="user[password]"x-bind:type="isshow ? 'text' : 'password'" />
 							<div class="absolute right-0 z-30 inset-y-1 flex items-center px-4 ">
 								<button type="button" @click="isshow=!isshow" class="z-30 ">
 									<svg x-show="!isshow" aria-hidden="true" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

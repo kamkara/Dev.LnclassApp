@@ -15,68 +15,9 @@
 								Use this section to point out how your product works and why it is different
 							</p>
 							<div class="ctas">
-								<div class="inlineFormWrapper left">
-									<form id="if_5fj395664zn" class="inlineForm inlineForm--undefined">
-										<div class="inlineFormContent">
-											<input type="hidden" id="if_siteid_5fj395664zn" value="zxf9wl5fgmhz">
-											<input type="hidden" id="if_listid_5fj395664zn">
-											<input type="hidden" id="if_action_5fj395664zn" value="forward">
-											<input type="hidden" id="if_optin_5fj395664zn">
-											<input type="hidden" id="if_tags_5fj395664zn" value="">
-											<input type="hidden" id="if_url_5fj395664zn">
-											<input type="hidden" id="if_legal_5fj395664zn" value="">
-											<input type="hidden" id="if_reqaccept_5fj395664zn" value="false">
-											<input type="text" id="if_name_5fj395664zn" class="inlineForm__input name" placeholder="Nom &amp; prénom">
-											<input type="email" id="if_email_5fj395664zn" autocomplete="email" class="inlineForm__input" placeholder="email">
-											<button id="if_submit_5fj395664zn" class="btn primary btn--large">S&#x27;inscrire d&#x27;abord</button>
-										</div>
-									</form>
+								
 								</div>
-								<script>
-									!function(){
-										var e=document.getElementById("if_5fj395664zn"),c=document.getElementById("if_submit_5fj395664zn"),d=document.getElementById("if_siteid_5fj395664zn"),r=document.getElementById("if_listid_5fj395664zn"),u=document.getElementById("if_email_5fj395664zn"),m=document.getElementById("if_action_5fj395664zn"),f=document.getElementById("if_url_5fj395664zn"),v=document.getElementById("if_name_5fj395664zn"),g=document.getElementById("if_reqaccept_5fj395664zn"),_=document.getElementById("if_accept_5fj395664zn"),I=document.getElementById("if_acceptlbl_5fj395664zn"),E=document.getElementById("if_legal_5fj395664zn"),t=document.getElementById("if_legalui_5fj395664zn"),L=document.getElementById("if_optin_5fj395664zn"),p=document.getElementById("if_tags_5fj395664zn"),y=null;
-										function n(e){
-											e.preventDefault();
-											var t,n,i,a,l,s,o={
-												siteId:d.value,listId:r.value,email:u.value,action:m.value,name:v?v.value:null,didAccept:_?_.checked:null,legal:E?E.value:null,doubleOptIn:"true"===L.value,tags:p.value?p.value.split(","):[]
-											};
-											s=!1,(l=o).email.length<6||-1===l.email.indexOf("@")||-1===l.email.indexOf(".")?(s=!0,u.classList.add("error")):u.classList.remove("error"),v&&""===v.value?(s=!0,v.classList.add("error")):v&&v.classList.remove("error"),I&&("true"!==g.value||_.checked?I.classList.remove("error"):(s=!0,I.classList.add("error"))),!1===s&&(c.classList.remove("btn--error"),c.classList.remove("btn--success"),c.classList.add("btn--loading"),"forward"===o.action?(i=o,a=(a=(a=f.value).replace("[EMAIL]",i.email)).replace("[NAME]",i.name),b(i.siteId,i.action,i.listId,!0),window.location.href=a):(t=o,(n=new XMLHttpRequest).open("POST",window.location.origin+"/api/subscribe",!0),n.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8"),n.send(JSON.stringify(t)),n.onload=function(){
-												c.classList.remove("btn--loading"),200<=this.status&&this.status<400?(u.value="",v&&(v.value=""),j(!1),w(),c.classList.add("btn--success"),y=setTimeout(function(){
-													c.classList.remove("btn--success")
-												}
-												,5e3),b(t.siteId,t.action,t.listId,!1)):B()
-											}
-											,n.onerror=function(){
-												c.classList.remove("btn--loading"),alert("A network error occured. Please make sure you are connected to the internet."),B()
-											}
-											))
-										}
-										function w(){
-											y&&clearTimeout(y)
-										}
-										function B(){
-											w(),c.classList.add("btn--error"),y=setTimeout(function(){
-												c.classList.remove("btn--error")
-											}
-											,5e3)
-										}
-										function b(e,t,n,i){
-											window.SendEvent({
-												siteId:e,category:"emailForm",name:"Email Form",data:{
-													action:t,listId:n,page:window.location.pathname
-												}
-												,asBeacon:i
-											}
-											)
-										}
-										function j(e){
-											t&&(e?t.classList.add("show"):t.classList.remove("show"))
-										}
-										e.addEventListener("submit",n),c.addEventListener("click",n),u.oninput=function(e){
-											e.target.value&&6<e.target.value.length?j(!0):j(!1)
-										}
-									}
-								</script>
+								
 							</div>
 							<div class="hero__ctaInfo"></div>
 						</div>
@@ -127,7 +68,7 @@
 							</g>
 						</svg>
 						<div class="pdxContent">
-							<img src="/lib_MXNWuvIodPXiwgVF/99ahey71u685kux9.png?w=642&amp;h=400&amp;fit=crop" srcset="/lib_MXNWuvIodPXiwgVF/99ahey71u685kux9.png?w=642&amp;h=400&amp;fit=crop, /lib_MXNWuvIodPXiwgVF/99ahey71u685kux9.png?w=642&amp;h=400&amp;fit=crop&amp;dpr=2 2x">
+							<img src="" srcset="">
 						</div>
 						<div class="pdxItem pdxItem--laptop-smartphone-phone">
 							<svg viewBox="0 0 328 655" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="pdxPhone">

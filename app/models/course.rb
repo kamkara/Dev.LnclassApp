@@ -28,4 +28,8 @@ STATUS = ["Lune", "Old"]
   def should_generate_new_friendly_id?
     title_changed?
   end
+
+  #Scopeto find essential for course
+  scope :essential, -> { where("feed_course.id = ?", feed_flash.course_id )}
+  # Ex:- scope :active, -> {where(:active => true)}
 end

@@ -5,7 +5,8 @@ class CoursesController < ApplicationController
 
   # GET /courses or /courses.json
   def index
-    @courses = Course.where("status= ?", "Lune").all.order('created_at desc')
+    @courses = Course.feed.all_ordered
+    @feed_flashes = Flash.all
   end
 
   # GET /courses/1 or /courses/1.json

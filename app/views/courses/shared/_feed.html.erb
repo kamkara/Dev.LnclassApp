@@ -41,16 +41,16 @@
 					<input type="checkbox" id="essential-modal" class="modal-toggle" />
 					<div class="modal modal-bottom sm:modal-middle"">
 						<div class="modal-box md:w-10/12 md:max-w-4xl text-white bg-black border">
-							<% @feed_flashes.essential.each do |flash| %>	
+							<%# @feed_flashes.essential.each do |flash| %>	
 								<div tabindex="0" class="collapse border rounded-md my-4"> 
 									<div class="collapse-title text-xl font-medium">
-										<%= flash.title %>
+										<%#= flash.title %>
 									</div>
 									<div class="collapse-content"> 
-										<%= flash.content %>
+										<%#= flash.content %>
 									</div>
 								</div>
-							<% end %>
+							<%# end %>
 							<div class="modal-action pb-4">
 								<label for="essential-modal" class="btn btn-sm btn-circle absolute ">✕</label>
 							</div>

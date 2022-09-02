@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   resources :flash_cards
   resources :flashes, except: [:create, :index, :new]
   #Course items
@@ -9,6 +10,14 @@ Rails.application.routes.draw do
     # resources :line_items, except: [:index, :show]
   #end
   
+  #Membership
+  get "teacher-sign-up" , to:'membership#teacherUp'
+  get "teacher-sign-in" , to:'membership#teacherIn'
+  get "ambassadeur-sign-up" , to:'membership#ambassadorUp'
+  get "ambassadeur-sign-in" , to:'membership#ambassadorIn'
+  get "team_up" , to:'membership#teamUp'
+  get "team_in" , to:'membership#teamIn'
+
    #Home && Feed
   get "home", to:'home#index'
 

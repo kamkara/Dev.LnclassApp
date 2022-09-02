@@ -1,25 +1,14 @@
-
-<% @title="Se connecter" %>
+ <!-- Scripts Js-->
+    <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+<% @title="Se connecter élèves" %>
 
   <div class="container-fluid" >
     <div class="flex flex-wrap ">
       <div class="m-auto border border-x-slate-300 ">
-        <div class="my-2 flex justify-center">
-          <h1 class="text-white font-bold font-bold text-4xl">
-            <span class="">Ln<span class="ln-logo-decor">class</span></span>
-          </h1>
-        </div>
-        <div class="flex border-y border-y-slate-300 py-2 px-4 md:-px-32 text-white  justify-center">
-          <div class="">
-            <span class="">Student</span>
-            <!-- 
-            <span class=" ml-4">Teacher</span>
-            -->
-          </div>
-        </div>
+        <%= render "membership/shared/header" %>
 
         <div class="px-4 md:px-32 py-8">
-          <h2 class="flex justify-center text-2xl text-white font-bold">Connexion </h2>      
+          <h2 class="flex justify-center text-2xl text-white font-bold">Connexion pour élèves</h2>      
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <!-- Error-->
             <%#= form_error_notification(resource: resource) %>

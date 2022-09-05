@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   get "teacher-sign-in" , to:'membership#teacherIn'
   get "ambassadeur-sign-up" , to:'membership#ambassadorUp'
   get "ambassadeur-sign-in" , to:'membership#ambassadorIn'
-  get "team_up" , to:'membership#teamUp'
-  get "team_in" , to:'membership#teamIn'
+  get "team-sign-up" , to:'membership#teamUp'
+  get "team-sign-in" , to:'membership#teamIn'
 
    #Home && Feed
   get "home", to:'home#index'

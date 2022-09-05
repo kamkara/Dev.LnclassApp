@@ -20,7 +20,7 @@ attr_writer :logged
   
   
   ################## VALIDATES  ###############
-  before_validation :user_student?,  on: :create
+  before_validation :user_validations?,  on: :create
   before_validation :full_name
    
   
@@ -30,19 +30,20 @@ attr_writer :logged
    validates :contact, uniqueness: true, numericality: { only_integer: true }, length: { minimum:10,
               message: "%{ value} verifier votre nom numéro est 10 chiffres"}
               
-   validates :user_role, inclusion: { in: %w(Student Teacher Team),
+   validates :user_role, inclusion: { in: %w(Student Teacher Team ambassador),
                     message: "%{value} acces non identifier" }
 
 
    ############# CUSTOMIZE ###############""
    
-   def user_student?
-    if self.user_role == "Student"
-      self.email = "#{self.matricule}@gmail.com" # if user.role == "Student"
+   def user_validations?
+    if self.user_role != "Student"
+      self.matricule = "#{self.contact}T"
+    else 
+      self.email = "#{self.matricule}@gmail.com"
       self.password = "#{self.contact}"
     end    
   end
-
 
   #FULL_NAME
   def full_name

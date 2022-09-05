@@ -11,8 +11,8 @@ module DeviseConfiguration
      #Configure permitted parameters
     def configure_permitted_parameters
         #Sign Up account params
-        sign_up_params = [:first_name, :last_name, :full_name, :contact, :matricule,
-            :user_role, :gender, :city_name, :level_name, :material_name, :doublant, :slug]
+        sign_up_params = [:email, :password, :first_name, :last_name, :full_name, :contact, :matricule,
+            :user_role, :gender, :city_name, :level_name, :school_name, :media_name, :material_name, :doublant, :slug]
         #Update account params
         update_params = [:first_name, :last_name, :full_name, :contact, :matricule,
             :user_role, :gender, :city_name, :level_name, :material_name, :doublant, 

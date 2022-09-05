@@ -1,9 +1,10 @@
 class ApplicationController < ActionController::Base
-    #store user action before authenticated
-    after_action :store_action
-
     protect_from_forgery with: :exception
-    before_action :find_citytown
+    before_action  :set_city,
+                    :set_material,
+                    :set_level,
+                    :store_action
+    
 
     #Keep clean Application conroller, moved on noncern
     include DeviseConfiguration
@@ -36,10 +37,17 @@ class ApplicationController < ActionController::Base
   
 private
 
-    def find_citytown
+    def set_city
         @citytowns = Citytown.all
     end
 
+    def set_material
+        @materials = Material.all
+    end
+
+    def set_level
+        @levels = Level.all
+    end
     def store_action
         return unless request.get? 
         if (request.path != "/users/sign_in" &&

@@ -37,16 +37,11 @@ attr_writer :logged
    ############# CUSTOMIZE ###############""
    
    def user_validations?
-    if self.user_role == "Student"
+    if self.user_role != "Student"
+      self.matricule = "#{self.contact}T"
+    else 
       self.email = "#{self.matricule}@gmail.com"
       self.password = "#{self.contact}"
-    elsif self.user_role == "Teacher"
-      self.matricule = "#{self.contact}T"
-      
-    elsif self.user_role == "Ambassador"
-
-    elsif self.user_role == "Team"
-      self.matricule = "#{self.contact}T"
     end    
   end
 

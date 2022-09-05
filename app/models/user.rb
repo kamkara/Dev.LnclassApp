@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable,
-        :trackable, authentication_keys: [:logged]
+        :trackable,  :authentication_keys => [:logged]
 
 has_many :levels, class_name: "Level", foreign_key: "user_id"
 has_many :materials, class_name: "Material", foreign_key: "user_id"
@@ -77,11 +77,12 @@ attr_writer :logged
   
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
-    if logged = conditions.delete(:logged)
+    if (logged = conditions.delete(:logged))
       where(conditions.to_h).where(["lower(matricule) = :value OR lower(email) = :value", { :value => logged.downcase }]).first
     elsif conditions.has_key?(:matricule) || conditions.has_key?(:email)
       where(conditions.to_h).first
     end
   end
+  
   ################## End Logged  #########
 end

@@ -46,7 +46,7 @@ attr_writer :logged
     elsif self.user_role == "Ambassador"
 
     elsif self.user_role == "Team"
-      
+      self.matricule = "#{self.contact}T"
     end    
   end
 

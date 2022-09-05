@@ -30,7 +30,7 @@ attr_writer :logged
    validates :contact, uniqueness: true, numericality: { only_integer: true }, length: { minimum:10,
               message: "%{ value} verifier votre nom numéro est 10 chiffres"}
               
-   validates :user_role, inclusion: { in: %w(Student Teacher Team),
+   validates :user_role, inclusion: { in: %w(Student Teacher Team ambassador),
                     message: "%{value} acces non identifier" }
 
 
@@ -44,7 +44,6 @@ attr_writer :logged
       self.password = "#{self.contact}"
     end    
   end
-
 
   #FULL_NAME
   def full_name

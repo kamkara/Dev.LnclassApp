@@ -20,7 +20,7 @@ attr_writer :logged
   
   
   ################## VALIDATES  ###############
-  before_validation :user_student?,  on: :create
+  before_validation :user_validations?,  on: :create
   before_validation :full_name
    
   
@@ -36,10 +36,17 @@ attr_writer :logged
 
    ############# CUSTOMIZE ###############""
    
-   def user_student?
+   def user_validations?
     if self.user_role == "Student"
-      self.email = "#{self.matricule}@gmail.com" # if user.role == "Student"
+      self.email = "#{self.matricule}@gmail.com"
       self.password = "#{self.contact}"
+    elsif self.user_role == "Teacher"
+      self.matricule = "#{self.contact}T"
+      
+    elsif self.user_role == "Ambassador"
+
+    elsif self.user_role == "Team"
+      
     end    
   end
 

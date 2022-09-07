@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
   resources :flash_cards
   resources :flashes, except: [:create, :index, :new]
+  
+  
   #Course items
   resources :courses, shallow: true do
     resources :flashes, only: [:create, :index, :new]

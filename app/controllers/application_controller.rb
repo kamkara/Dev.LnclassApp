@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+    #Notice flash type
+    add_flash_types :success, :warning, :info
     protect_from_forgery with: :exception
     before_action  :set_city,
                     :set_material,

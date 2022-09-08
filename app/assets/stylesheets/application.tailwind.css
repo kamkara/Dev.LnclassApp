@@ -48,6 +48,15 @@
   .ln-radio {
     @apply text-white;
   }
+
+  /* notice  */
+  
+  .msg-notice {
+  @apply bg-green-300 text-green-900;
+  }
+  .msg-alert {
+    @apply bg-red-300 text-red-900;
+  }
 }
 
 @import 'actiontext.css';

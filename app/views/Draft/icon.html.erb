@@ -1,12 +1,4 @@
-<div class="max-h-screen bg-black w-full flex">
-  <div class="mx-auto">
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-    <% end %>
-
-    <%= render @user_echange %>
-
-    <!-- Course Feed create options-->
+<!-- Course Feed create options-->
 				<div class="flex-initial dropdown dropdown-hover ">
 					<button class="flex ln-btn-color ln-btn-hover-color text-sm font-semibold">
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"
@@ -15,12 +7,8 @@
 						<span tabindex="0" class="mx-2">Créer</span>
 					</button>
 						<ul tabindex="0" class="dropdown-content menu text-black bg-gray-100 rounded-box">
-          
-							<li><%= link_to 'Modifier', edit_user_echange_path(@user_echange) %></li>
-							<li><%= button_to 'Supprimer', user_echange_path(@user_echange), method: :delete %></li>
+							<li><%= link_to 'Essentiels', new_course_flash_path(course) %></li>
+							<li><%= link_to 'Exercices', root_path %></li>
 							
 						</ul>						
 				</div>
-    <%#= link_to 'Back to user_echanges', user_echanges_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  </div>
-</div>

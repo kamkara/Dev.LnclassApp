@@ -14,10 +14,7 @@ Course.all.with_rich_text_content_and_embeds # Preload both body and attachments
 STATUS = ["Lune", "Old"]
 
   ################## SLUG ###############
-  validates :title, :content, 
-            :course_id,:user_id,
-            :slug, :status,
-            presence: true
+  validates :title, :course_id, :user_id, :slug, presence: true
 
   def slugged_custom
     #Apprendre-a-calculer-les-limites-math-tleD

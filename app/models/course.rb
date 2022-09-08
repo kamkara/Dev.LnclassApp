@@ -3,7 +3,9 @@ class Course < ApplicationRecord
   has_rich_text :content
   has_many :flashes, dependent: :destroy
   has_many :flash_cards, dependent: :destroy
-  has_many :user_echanges, class_name: "User_echange", foreign_key: "course_id",  dependent: :destroy
+  has_many :user_echanges, class_name: "UserEchange",
+                            foreign_key: "course_id",
+                            dependent: :destroy
 
   ################## FIX N+1  ###############
 Course.all.with_rich_text_content # Preload the body without attachments.

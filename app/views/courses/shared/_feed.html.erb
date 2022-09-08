@@ -6,20 +6,7 @@
 				<div class="flex-initial  ">
 					<p class="font-bold text-xl "><%= course.material_name %></p>	
 				</div>	
-				<!-- Course Feed create options-->
-				<div class="flex-initial dropdown dropdown-hover ">
-					<button class="flex ln-btn-color ln-btn-hover-color text-sm font-semibold">
-						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"
-						width="16px" height="16px" class="bg-white rounded-md px-1">
-						<g><path d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z"/></g>
-						<span tabindex="0" class="mx-2">Créer</span>
-					</button>
-						<ul tabindex="0" class="dropdown-content menu text-black bg-gray-100 rounded-box">
-							<li><%= link_to 'Essentiels', new_course_flash_path(course) %></li>
-							<li><%= link_to 'Exercices', root_path %></li>
-							
-						</ul>						
-				</div>
+				
 			</div>
 			<div class="mt-4">
 				<span class="font-bold text-xl"><%= course.title %></span>
@@ -57,6 +44,13 @@
 								<div class="mx-auto">
 								<h1 class="flex items-center">Essentiels de la léçons</h1>
 								</div>
+								<%= link_to new_course_flash_path(course), class:"ln-btn-color ln-btn-hover-color flex" do %>
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"
+						width="16px" height="16px" class="bg-white rounded-md px-1">
+						<g><path d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z"/></g>
+						<span tabindex="0" class="mx-2">Créer</span>
+								<% end %>
+								
 							</div>
 							<% course.flashes.each do |flash| %>	
 								<div tabindex="0" class="collapse border rounded-md my-4"> 
@@ -95,19 +89,36 @@
 						<div class="modal-box md:w-10/12 md:max-w-4xl text-white bg-black border">
 							<div class="flex max-w-screen mx-auto">
 								<div class="mx-auto">
-								<h1 class="flex items-center">
-								<span class="">Votre question doit-etre précise.</span>
-								</h1>
+									<h1 class="flex items-center"><span class="">Votre question doit-etre précise.</span></h1>
 								</div>
-								<%= link_to 'Posez votre question', new_course_user_echange_path(course), class:"ln-btn-color ln-btn-hover-color" %>
+								<%= link_to new_course_user_echange_path(course), class:" flex ml-4 md:mr-16 ln-btn-color ln-btn-hover-color " do %>
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"
+									width="12px" height="12px" class="md:hidden bg-white rounded-md px-1">
+									<g><path d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z"/></g>
+									</svg>
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"
+									width="16px" height="16px" class="hidden md:block bg-white rounded-md px-1">
+									<g><path d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z"/></g>
+									</svg>
+									<span tabindex="0" class="text-xs md:mx-2 ">Une Question?</span>
+								<% end %>
+
+								<span class="modal-action flex items-end ">
+									<label for="user-echange-modal" class="btn btn-sm btn-circle absolute ">✕</label>
+								</span>
+								
+								
 							</div>
-							<%# course.user_echanges.each do |echange| %>	
+							<% course.user_echanges.each do |user_echange| %>	
 								<div tabindex="0" class="collapse border rounded-md my-4"> 
 									<div class="collapse-title text-xl font-medium">
-										<%#= echange.title %> - <small class="ln-btn-color ln-btn-hover-color text-sm py-1 ">Voir plus</small>
+										<%= link_to user_echange_path(user_echange) do %>
+										 <%= user_echange.title %> - <small class="ln-btn-color ln-btn-hover-color text-sm py-1 ">Voir plus</small> 
+										<% end %>
+										
 									</div>
 								</div>
-							<%# end %>
+							<% end %>
 							<div class="modal-action pb-4">
 								<label for="user-echange-modal" class="btn btn-sm btn-circle absolute ">✕</label>
 							</div>

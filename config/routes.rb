@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :echanges
   
   resources :flash_cards
   resources :flashes, except: [:create, :index, :new]

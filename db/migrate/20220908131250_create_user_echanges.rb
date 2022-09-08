@@ -1,6 +1,6 @@
-class CreateEchanges < ActiveRecord::Migration[7.0]
+class CreateUserEchanges < ActiveRecord::Migration[7.0]
   def change
-    create_table :echanges, id: :uuid do |t|
+    create_table :user_echanges, id: :uuid do |t|
       t.string :title
       t.string :status
       t.string :slug

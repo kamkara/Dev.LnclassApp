@@ -5,8 +5,8 @@ class CoursesController < ApplicationController
 
   # GET /courses or /courses.json
   def index
-    @courses = Course.feed.all_ordered
-    #@feed_flashes = Flash.all
+    @courses = Course.feed.includes(:flashes).all_ordered
+    
   end
 
   # GET /courses/1 or /courses/1.json

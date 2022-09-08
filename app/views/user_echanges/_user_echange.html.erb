@@ -1,42 +1,42 @@
-<div id="<%= dom_id echange %>">
+<div id="<%= dom_id user_echange %>">
   <p class="my-5">
     <strong class="block font-medium mb-1">Title:</strong>
-    <%= echange.title %>
+    <%= user_echange.title %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Content:</strong>
-    <%= echange.content %>
+    <%= user_echange.content %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Wiki:</strong>
-    <%= echange.wiki %>
+    <%= user_echange.wiki %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Status:</strong>
-    <%= echange.status %>
+    <%= user_echange.status %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Slug:</strong>
-    <%= echange.slug %>
+    <%= user_echange.slug %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Course:</strong>
-    <%= echange.course_id %>
+    <%= user_echange.course_id %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">User:</strong>
-    <%= echange.user_id %>
+    <%= user_echange.user_id %>
   </p>
 
   <% if action_name != "show" %>
-    <%= link_to "Show this echange", echange, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this echange', edit_echange_path(echange), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Show this user echange", user_echange, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this user echange', edit_user_echange_path(user_echange), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <hr class="mt-6">
   <% end %>
 </div>

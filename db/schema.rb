@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_08_121819) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_08_131250) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -73,18 +73,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_08_121819) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_courses_on_user_id"
-  end
-
-  create_table "echanges", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "title"
-    t.string "status"
-    t.string "slug"
-    t.uuid "course_id", null: false
-    t.uuid "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["course_id"], name: "index_echanges_on_course_id"
-    t.index ["user_id"], name: "index_echanges_on_user_id"
   end
 
   create_table "flash_cards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -151,6 +139,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_08_121819) do
     t.index ["user_id"], name: "index_schools_on_user_id"
   end
 
+  create_table "user_echanges", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title"
+    t.string "status"
+    t.string "slug"
+    t.uuid "course_id", null: false
+    t.uuid "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_user_echanges_on_course_id"
+    t.index ["user_id"], name: "index_user_echanges_on_user_id"
+  end
+
   create_table "user_roles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title"
     t.string "slug"
@@ -196,8 +196,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_08_121819) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "citytowns", "users"
   add_foreign_key "courses", "users"
-  add_foreign_key "echanges", "courses"
-  add_foreign_key "echanges", "users"
   add_foreign_key "flash_cards", "courses"
   add_foreign_key "flash_cards", "users"
   add_foreign_key "flashes", "courses"
@@ -205,5 +203,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_08_121819) do
   add_foreign_key "levels", "users"
   add_foreign_key "materials", "users"
   add_foreign_key "schools", "users"
+  add_foreign_key "user_echanges", "courses"
+  add_foreign_key "user_echanges", "users"
   add_foreign_key "user_roles", "users"
 end

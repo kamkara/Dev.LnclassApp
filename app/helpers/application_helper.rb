@@ -8,13 +8,13 @@ module ApplicationHelper
         "#{@title} • #{base_title}"
         end
     end
-     def app_name
+    def app_name
       "Lnclass Education"
-     end
+    end
 
-     def language
+    def language
       "fr"
-     end
+    end
     #site description
     def description
         "Etudier avec facilité."

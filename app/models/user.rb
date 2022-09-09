@@ -12,6 +12,7 @@ has_many :citytowns, class_name: "Citytown", foreign_key: "user_id"
 has_many :courses, class_name: "Course", foreign_key: "user_id"
 has_many :flashes
 has_many :flash_cards
+has_many :user_echanges, class_name: "User_echange", foreign_key: "user_id"
 
 
             

@@ -1,27 +1,22 @@
-		<div class="body-homepage">
-
-		<!--Page title -->
-		<% @title="Accueil" %>
-		
-		
+<% @title="Accueil" %>
+<div class="body-homepage">
+	<!--Page title -->
 	<!-- Navbar-->
     <%= render "homepage/shared/navbar" %>
 		<!-- Hero -->
     <%= render "homepage/shared/hero" %>
-		
 		<!-- Feature Lesson Essentials-->
     <%= render "homepage/shared/essential" %>
 		<!-- Feature  Flash Card-->
     <%= render "homepage/shared/flashCard" %>
 		<!-- Feature Exercise -->
     <%= render "homepage/shared/exercise" %>
-		
 		<!-- Pricing -->
     <%= render "homepage/shared/pricing" %>
-		
-		<!--  -->
-		<!-- Testimonial -->
-		<%= render "homepage/shared/testimonial" %>
-		<!--  -->
-		<%= render "homepage/shared/programs" %>
-		</div>
+	<!--  -->
+	<!-- Testimonial -->
+	<%= render "homepage/shared/testimonial" %>
+	<!--  -->
+	<%= render "homepage/shared/programs" %>
+	<%= render "homepage/shared/footer" %>
+</div>

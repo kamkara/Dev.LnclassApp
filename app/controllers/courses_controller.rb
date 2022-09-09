@@ -5,8 +5,9 @@ class CoursesController < ApplicationController
 
   # GET /courses or /courses.json
   def index
+   #@courses = Course.feed.includes(:flashes, :user_echanges).all_ordered
     @courses = Course.feed.all_ordered
-    #@feed_flashes = Flash.all
+    
   end
 
   # GET /courses/1 or /courses/1.json
@@ -31,7 +32,8 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to course_path(@course), notice: "Course was successfully created." }
+        format.html { redirect_to course_path(@course), 
+           flash[:custom]= "La léçon est publiée." }
         format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new, status: :unprocessable_entity }
